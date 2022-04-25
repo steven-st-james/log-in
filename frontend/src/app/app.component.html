@@ -1,0 +1,11 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+  <span class="nav-tool-items">
+    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+    <a mat-button mat-raised-button routerLinkActive="active" [disabled]="userState$ | async">Log Out</a>
+  </span>
+</mat-toolbar>
+<div class="view-wrapper">
+  <router-outlet></router-outlet>
+</div>

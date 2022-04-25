@@ -1,0 +1,24 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Update Password</mat-card-title>
+      </mat-card-header>
+      <form class="example-form" [formGroup]="editForm">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Old Password" formControlName='oldPassword' [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="New Pasword" formControlName='newPassword' [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block" type="submit" (click)="handleUpdate(editForm.value)">Log in</button>
+      </form>
+    </mat-card>
+  </div>
